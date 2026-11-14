@@ -1,69 +1,112 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
+    <main>
+      <nav className="navbar">
+        <h2>🎓 CampusConnect</h2>
+
+        <div className="nav-links">
+          <Link href="/">Home</Link>
+          <Link href="/login">Login</Link>
+          <Link href="/dashboard">Dashboard</Link>
+        </div>
+
+        <Link href="/login" className="nav-btn">
+          Get Started
+        </Link>
+      </nav>
+
+      <section className="hero">
+        <div className="hero-content">
+          <span className="tag">WELCOME TO CAMPUSCONNECT</span>
+
           <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
+            Your Campus Life,
+            <span> Simplified.</span>
           </h1>
+
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Manage your courses, assignments, attendance
+            and student information all in one place.
+            Make your academic journey easier with CampusConnect.
           </p>
+
+          <div className="hero-buttons">
+            <Link href="/login" className="primary-btn">
+              Get Started →
+            </Link>
+
+            <Link href="/dashboard" className="secondary-btn">
+              Explore Dashboard
+            </Link>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="hero-card">
+          <div className="card-top">
+            <span>Student Overview</span>
+            <span>📊</span>
+          </div>
+
+          <h2>Welcome Back!</h2>
+          <p>Here's your academic overview.</p>
+
+          <div className="stats">
+            <div>
+              <h3>06</h3>
+              <p>Courses</p>
+            </div>
+
+            <div>
+              <h3>85%</h3>
+              <p>Attendance</p>
+            </div>
+
+            <div>
+              <h3>12</h3>
+              <p>Assignments</p>
+            </div>
+          </div>
+
+          <div className="progress-box">
+            <p>Overall Progress</p>
+            <div className="progress">
+              <div></div>
+            </div>
+            <small>75% completed</small>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="features">
+        <h2>Everything You Need in One Place</h2>
+        <p>Manage your academic activities easily.</p>
+
+        <div className="feature-grid">
+          <div className="feature-card">
+            <span>📚</span>
+            <h3>Courses</h3>
+            <p>View your enrolled courses and learning progress.</p>
+          </div>
+
+          <div className="feature-card">
+            <span>📝</span>
+            <h3>Assignments</h3>
+            <p>Track assignments and upcoming deadlines.</p>
+          </div>
+
+          <div className="feature-card">
+            <span>📊</span>
+            <h3>Attendance</h3>
+            <p>Keep track of your attendance percentage.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © 2026 CampusConnect. All Rights Reserved.
+      </footer>
+    </main>
   );
 }
